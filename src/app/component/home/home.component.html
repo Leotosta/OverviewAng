@@ -1,0 +1,26 @@
+<h2>ID number {{id}}</h2>
+<h3>{{title}}</h3>
+
+<div>
+    <form [formGroup]="checkForm" autocomplete="off">
+        <div>
+            <label>Name</label>
+            <br />
+            <input type="text" name="username" formControlName="username"  />
+        </div>
+
+        <div>
+            <label>Patrimony</label>
+            <br />
+            <input type="number" name="patrimony" formControlName="patrimony"  />
+        </div>
+
+        <div>
+            <label>Age</label>
+            <br />
+            <input type="number" name="age" formControlName="age"  />
+        </div>
+
+        <button (click)="submitForm()"> Submit </button>
+    </form>
+</div>
