@@ -7,21 +7,22 @@ import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { MyLibModule } from 'projects/my-lib/src/public-api';
+import { ButtonFluiterComponentMyLib } from 'projects/my-lib/src/lib/components/button-fluiter/button-fluiter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DashboardComponent
-  ],
+    HomeComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    MyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]

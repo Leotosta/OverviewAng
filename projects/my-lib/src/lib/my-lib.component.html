@@ -1,0 +1,10 @@
+<div>
+    <label>Description</label>
+    <br />
+    <input type="text" [ngModel]="description" (ngModelChange)="valuechange($event)" />
+</div>
+<div  >
+    <lib-cards *ngFor="let class of cards" [class]="class" ></lib-cards>
+</div>
+
+

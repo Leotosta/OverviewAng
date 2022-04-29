@@ -10,8 +10,7 @@ export class UsersResolver implements Resolve<any> {
     constructor(private service: HomeService) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> | any {
-        console.log(route);
-        return this.service.getUsers().pipe(
+        return this.service.getUsersPosts().pipe(
             catchError(error => of(error))
         ) ;
     }

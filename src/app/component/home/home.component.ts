@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HomeService } from 'src/app/service/home.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   title: string;
   user = ''
 
-  constructor(private activateRoute: ActivatedRoute, private formBuilder: FormBuilder, private router: Router) { 
+  constructor(private activateRoute: ActivatedRoute, private formBuilder: FormBuilder, private router: Router, private service: HomeService) { 
     this.configForm();
   }
 
@@ -39,9 +40,9 @@ export class HomeComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.checkForm);
-    console.log(this.title);
-    this.router.navigate(['dashboard', `${this.id}`, `${this.title}`])
+    console.log(this.checkForm.value);
+    this.service.sendUser(this.checkForm.value);
+    this.router.navigate(['finance', 'dashboard', `${this.id}`, `${this.title}`])
 
   }
 
